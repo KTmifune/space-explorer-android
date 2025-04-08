@@ -69,9 +69,11 @@ dependencies {
     implementation(libs.hilt)
     kapt(libs.hilt.android.compiler)
 
-    implementation(libs.navigation)
-    implementation(libs.hilt.navigation.compose)
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose) // HiltをNavigationComposeライブラリの統合
 
+    // 画像
     implementation(libs.coil.compose)
 
 }
