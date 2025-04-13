@@ -5,6 +5,7 @@ plugins {
 
     alias(libs.plugins.kotlin.kapt)
     alias(libs.plugins.hilt)
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -39,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -62,8 +64,12 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // ネットワーク
-    implementation(libs.retrofit)
     implementation(libs.kotlin.serialization)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlin.serialization)
+
+    // ロガー
+    implementation(libs.okhttp.logging)
 
     // DI
     implementation(libs.hilt)
