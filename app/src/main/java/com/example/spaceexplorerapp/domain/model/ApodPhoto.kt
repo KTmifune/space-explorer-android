@@ -10,4 +10,3 @@ data class ApodPhoto(
     val imageUrl: String = "",
     val highImageUrl: String = "",
 )
-

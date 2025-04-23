@@ -1,12 +1,13 @@
 package com.example.spaceexplorerapp.data.repository
 
-import com.example.spaceexplorerapp.data.model.ApodResponseDto
+import com.example.spaceexplorerapp.data.detasource.remote.NasaRemoteDataSource
+import com.example.spaceexplorerapp.data.model.toPhoto
+import com.example.spaceexplorerapp.domain.model.ApodPhoto
 import com.example.spaceexplorerapp.domain.reposiroty.NasaApiRepository
-import com.example.spaceexplorerapp.network.RetrofitNasaApi
 import javax.inject.Inject
 
 class NasaApiRepositoryImpl @Inject constructor(
-    private val api: RetrofitNasaApi
+    private val remoteDatasource: NasaRemoteDataSource
 ) : NasaApiRepository {
     override suspend fun getAstronomyPicture(
         date: String?,
@@ -14,8 +15,12 @@ class NasaApiRepositoryImpl @Inject constructor(
         endDate: String?,
         count: Int?,
         thumbs: Boolean
-    ): ApodResponseDto {
-        return api.gatAstronomyPicture(date, startDate, endDate, count, thumbs)
+    ): ApodPhoto {
+        // TODO:データが取得できななかった場合ローカルから取得する
+        return try {
+            remoteDatasource.getApod(date, startDate, endDate, count, thumbs).toPhoto()
+        } catch (e: Exception) {
+            ApodPhoto()
+        }
     }
-
 }

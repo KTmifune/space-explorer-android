@@ -1,6 +1,6 @@
 package com.example.spaceexplorerapp.domain.reposiroty
 
-import com.example.spaceexplorerapp.data.model.ApodResponseDto
+import com.example.spaceexplorerapp.domain.model.ApodPhoto
 
 
 interface NasaApiRepository {
@@ -11,5 +11,5 @@ interface NasaApiRepository {
         endDate: String? = null,
         count: Int? = null,
         thumbs: Boolean = false
-    ): ApodResponseDto
+    ): ApodPhoto
 }
