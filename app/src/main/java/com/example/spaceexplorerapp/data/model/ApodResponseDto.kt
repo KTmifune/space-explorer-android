@@ -1,7 +1,7 @@
 package com.example.spaceexplorerapp.data.model
 
 
-import com.example.spaceexplorerapp.domain.model.ApodPhoto
+import com.example.spaceexplorerapp.domain.model.ApodInfo
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -28,8 +28,8 @@ data class ApodResponseDto(
 )
 
 
-fun ApodResponseDto.toPhoto(): ApodPhoto {
-    return ApodPhoto(
+fun ApodResponseDto.toPhoto(): ApodInfo {
+    return ApodInfo(
         title = title,
         copyright = copyright,
         date = date,
