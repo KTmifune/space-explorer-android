@@ -3,9 +3,10 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
 
-    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
     id("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
+
 }
 
 android {
@@ -44,6 +45,15 @@ android {
     }
 }
 
+kotlin {
+    sourceSets.all {
+        languageSettings {
+            // ExperimentalCoroutinesApi をグローバル opt-in
+            optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
+        }
+    }
+}
+
 dependencies {
 
     // default設定
@@ -63,6 +73,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // コルーチン
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
     // ネットワーク
     implementation(libs.kotlin.serialization)
     implementation(libs.retrofit)
@@ -73,7 +87,7 @@ dependencies {
 
     // DI
     implementation(libs.hilt)
-    kapt(libs.hilt.android.compiler)
+    ksp(libs.hilt.android.compiler)
 
     // Navigation
     implementation(libs.androidx.navigation.compose)
@@ -82,9 +96,4 @@ dependencies {
     // 画像
     implementation(libs.coil.compose)
 
-}
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
 }
