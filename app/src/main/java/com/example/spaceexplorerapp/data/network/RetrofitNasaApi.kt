@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface RetrofitNasaApi {
 
     @GET("planetary/apod")
-    suspend fun gatApod(
+    suspend fun getApod(
         @Query("date") date: String? = null,                     // 任意: 1日分
         @Query("start_date") startDate: String? = null,          // 任意: 期間指定（開始）
         @Query("end_date") endDate: String? = null,              // 任意: 期間指定（終了）

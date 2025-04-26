@@ -14,6 +14,6 @@ class NasaRemoteDataSourceImpl @Inject constructor(
         count: Int?,
         thumbs: Boolean
     ): ApodResponseDto {
-        return api.gatApod(date, startDate, endDate, count, thumbs)
+        return api.getApod(date, startDate, endDate, count, thumbs)
     }
 }
