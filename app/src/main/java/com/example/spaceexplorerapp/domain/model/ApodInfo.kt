@@ -1,6 +1,6 @@
 package com.example.spaceexplorerapp.domain.model
 
-data class ApodPhoto(
+data class ApodInfo(
     val title: String = "",
     val copyright: String = "",
     val date: String = "",

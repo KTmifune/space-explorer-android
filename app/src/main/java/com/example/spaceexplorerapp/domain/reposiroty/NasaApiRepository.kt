@@ -1,15 +1,15 @@
 package com.example.spaceexplorerapp.domain.reposiroty
 
-import com.example.spaceexplorerapp.domain.model.ApodPhoto
+import com.example.spaceexplorerapp.domain.model.ApodInfo
 
 
 interface NasaApiRepository {
 
-    suspend fun getAstronomyPicture(
+    suspend fun getApodInfo(
         date: String? = null,
         startDate: String? = null,
         endDate: String? = null,
         count: Int? = null,
         thumbs: Boolean = false
-    ): ApodPhoto
+    ): ApodInfo?
 }
