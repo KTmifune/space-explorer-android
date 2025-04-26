@@ -1,7 +1,7 @@
 package com.example.spaceexplorerapp.data.detasource.remote
 
 import com.example.spaceexplorerapp.data.model.ApodResponseDto
-import com.example.spaceexplorerapp.network.RetrofitNasaApi
+import com.example.spaceexplorerapp.data.network.RetrofitNasaApi
 import javax.inject.Inject
 
 class NasaRemoteDataSourceImpl @Inject constructor(
