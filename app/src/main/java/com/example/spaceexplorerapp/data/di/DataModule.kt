@@ -1,4 +1,4 @@
-package com.example.spaceexplorerapp.di
+package com.example.spaceexplorerapp.data.di
 
 import com.example.spaceexplorerapp.data.detasource.remote.NasaRemoteDataSource
 import com.example.spaceexplorerapp.data.detasource.remote.NasaRemoteDataSourceImpl

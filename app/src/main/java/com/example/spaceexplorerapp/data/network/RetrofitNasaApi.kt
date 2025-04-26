@@ -1,4 +1,4 @@
-package com.example.spaceexplorerapp.network
+package com.example.spaceexplorerapp.data.network
 
 import com.example.spaceexplorerapp.data.model.ApodResponseDto
 import retrofit2.http.GET

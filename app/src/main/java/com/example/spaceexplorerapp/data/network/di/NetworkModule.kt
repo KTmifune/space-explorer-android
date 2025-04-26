@@ -1,8 +1,8 @@
-package com.example.spaceexplorerapp.di
+package com.example.spaceexplorerapp.data.network.di
 
 import com.example.spaceexplorerapp.BuildConfig
 import com.example.spaceexplorerapp.common.NASA_BASE_URL
-import com.example.spaceexplorerapp.network.RetrofitNasaApi
+import com.example.spaceexplorerapp.data.network.RetrofitNasaApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
