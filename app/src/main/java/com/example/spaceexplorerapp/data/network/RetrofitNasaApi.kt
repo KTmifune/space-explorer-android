@@ -1,5 +1,6 @@
 package com.example.spaceexplorerapp.data.network
 
+import com.example.spaceexplorerapp.common.API_KEY
 import com.example.spaceexplorerapp.data.model.ApodResponseDto
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,7 +14,8 @@ interface RetrofitNasaApi {
         @Query("start_date") startDate: String? = null,          // 任意: 期間指定（開始）
         @Query("end_date") endDate: String? = null,              // 任意: 期間指定（終了）
         @Query("count") count: Int? = null,                      // 任意: ランダム取得（件数）
-        @Query("thumbs") thumbs: Boolean = false                 // 任意: 動画サムネ取得
+        @Query("thumbs") thumbs: Boolean = false,                 // 任意: 動画サムネ取得
+        @Query("api_key") apiKey: String = API_KEY
     ): ApodResponseDto
 
 //    @Headers("Authorization: Client-ID ${Constants.API_KEY}")
