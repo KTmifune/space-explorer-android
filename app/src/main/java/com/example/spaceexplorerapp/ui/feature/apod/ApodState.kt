@@ -4,6 +4,7 @@ import com.example.spaceexplorerapp.domain.model.ApodInfo
 
 sealed interface ApodUiState {
     data object Loading : ApodUiState
+    data class Refreshing(val photo: ApodInfo) : ApodUiState
     data class Success(val photo: ApodInfo) : ApodUiState
     data class Error(val message: String) : ApodUiState
 }

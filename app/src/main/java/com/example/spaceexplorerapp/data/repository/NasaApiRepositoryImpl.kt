@@ -21,6 +21,7 @@ class NasaApiRepositoryImpl @Inject constructor(
             val data = remoteDatasource.getApod(date, startDate, endDate, count, thumbs)
             return data.toPhoto()
         } catch (e: Exception) {
+            println("${e.message}")
             return null
         }
     }
